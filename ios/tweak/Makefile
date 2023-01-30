@@ -1,11 +1,11 @@
-TARGET := iphone:clang:latest:7.0
+export TARGET := iphone:clang:14.4
 @@KILL_RULE@@
 
 include @@THEOS@@/makefiles/common.mk
 
 TWEAK_NAME = @@PROJECTNAME@@
 
-@@PROJECTNAME@@_FILES = Tweak.x
-@@PROJECTNAME@@_CFLAGS = -fobjc-arc
+$(TWEAK_NAME)_FILES = Tweak.x
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
